@@ -41,9 +41,9 @@
 
 
 
+<?php include 'pages/AdminLogin.php'; ?>
 <?php include 'pages/studentRegister.php'; ?>
 <?php include 'pages/studentLogin.php'; ?>
-<?php include 'pages/AdminLogin.php'; ?>
 
 
 <div class="chat-bot">
