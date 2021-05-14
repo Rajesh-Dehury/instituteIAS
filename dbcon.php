@@ -1,5 +1,5 @@
 <?php
-    $con=mysqli_connect('localhost','root','','top_class_ias');
+    $con=mysqli_connect('sql6.freemysqlhosting.net','sql6412318','qxTsQnds8i','sql6412318');
 
     if($con){
         // echo "Connected";
