@@ -1,56 +1,38 @@
-<h2 class="text-center mt-5">Update Admin</h2>
-<div class="row justify-content-center mt-5">
-    <div class="col-lg-6 shadow p-5">
-        <form>
-            <div class="form-group row">
-                <label for="a_name" class="col-sm-4 col-form-label">Full Name</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control rounded-0" id="a_name" placeholder="Enter Full Name" required>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="a_mail" class="col-sm-4 col-form-label">Eneter Email</label>
-                <div class="col-sm-8">
-                    <input type="email" class="form-control rounded-0" id="a_mail" placeholder="Enter E mail" required>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="a_phone" class="col-sm-4 col-form-label">Eneter Phone</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control rounded-0" id="a_phone" placeholder="Enter Phone No" required>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="a_pass" class="col-sm-4 col-form-label">Password</label>
-                <div class="col-sm-8">
-                    <input type="password" class="form-control rounded-0" id="a_pass" required>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="c_a_pass" class="col-sm-4 col-form-label">Conf. Password</label>
-                <div class="col-sm-8">
-                    <input type="password" class="form-control rounded-0" id="c_a_pass" onfocusout="validatePass()" required>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-success btn-block rounded-0" id="s_btn">Submit</button>
-        </form>
-    </div>
-</div>
+<!-- Update Admin Profile -->
+<?php
+    error_reporting(0);
+    ob_start();
+    session_start();
+    
+    // if($_SESSION['a_id']){
+    //     // echo $_SESSION['ad_id'];
+    // }
+    // else{
+    //     header('location:index.php');
+    // }
+ 
+    
+    if(isset($_POST['submitA'])){
 
+        include "../dbcon.php";
 
-<script>
-    let c_a_pass = document.getElementById('c_a_pass');
-    let a_pass  =  document.getElementById('a_pass');
-    let s_btn = document.getElementById('s_btn');
+        $a_Id =$_POST['a_id'];
+        $a_Name = $_POST['a_name'];
+        $a_Mail = $_POST['a_mail'];
+        $a_Phone = $_POST['a_phone'];
+        $a_Pass = $_POST['a_pass'];
 
-    s_btn.disabled = true;
+        // $a_U_Name = $_POST['ad_u_name'];
+        // $a_Pass_Conf = $_POST['ad_pass_conf'];
 
-    function validatePass(){
-        if(c_a_pass.value == a_pass.value){
-            s_btn.disabled = false;
-        }else{
-            c_a_pass.style.background ="rgba(255,0,0,0.1)";
-            s_btn.disabled = true;
-        }
+        // echo $a_Mail;
+        
+        $query="UPDATE `ias_admin` SET `a_name` = '$a_Name', `a_mail` = '$a_Mail', `a_phone` = '$a_Phone', `a_pass` = '$a_Pass' WHERE `ias_admin`.`a_id` = '$a_Id';";
+
+        $result=mysqli_query($con,$query);
+        
+        header('location:adminDashbord.php?content_id=viewAdminProfiles');
     }
-</script>
+?> 
+
+

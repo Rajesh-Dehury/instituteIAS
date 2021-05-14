@@ -1,3 +1,16 @@
+<?php
+error_reporting(0);
+ob_start();
+session_start();
+
+if($_SESSION['a_id']){
+    // header('location:dashbord.php');
+}
+else{
+    header('location:../');
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -95,8 +108,11 @@
                 case "createAdmin":
                     include 'createAdmin.php';
                     break;                      
-                case "updateAdmin":
-                    include 'updateAdmin.php';
+                case "updateAdminForm":
+                    include 'updateAdminForm.php';
+                    break;   
+                case "deleteAdmin":
+                    include 'deleteAdmin.php';
                     break;   
                     
                     // course section
@@ -106,8 +122,11 @@
                 case "viewCourse":
                     include 'viewCourse.php';
                     break;    
+                case "updateCourseForm":
+                    include 'updateCourseForm.php';
+                    break;    
                 case "addCourseData":
-                    include 'addCourseData.php';
+                    include 'createCourseData.php';
                     break; 
                     
                     // Notifications
@@ -116,6 +135,9 @@
                     break;    
                 case "createNotification":
                     include 'createNotification.php';
+                    break;
+                case "updateNotificationForm":
+                    include 'updateNotificationForm.php';
                     break;
                 
                 // students

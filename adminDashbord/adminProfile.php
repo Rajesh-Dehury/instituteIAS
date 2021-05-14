@@ -3,20 +3,20 @@ error_reporting(0);
 ob_start();
 session_start();
 
-if($_SESSION['u_id']){
-    // header('location:userDashbord.php');
+if($_SESSION['a_id']){
+    // header('location:adminDashbord.php');
 }
 else{
-    // header('location:../');
+    header('location:../');
 }
 
 include("../dbcon.php");
-$id=$_SESSION['u_id'];
-$mail=$_SESSION['u_mail'];
+$id=$_SESSION['a_id'];
+$mail=$_SESSION['a_mail'];
 
 // echo $mail;
 
-$query="SELECT * FROM `user_details` WHERE `email`='$mail';";
+$query="SELECT * FROM `ias_admin` WHERE `a_id` = '$id' AND `a_mail` = '$mail';";
 $result=mysqli_query($con,$query);
 $row = mysqli_fetch_array($result);
 
@@ -41,24 +41,24 @@ $row = mysqli_fetch_array($result);
                     </div>
                     <hr class="my-3">
                     <div class="form-group row">
-                        <h4 for="staticEmail" class="py-0 col-sm-4 col-form-label">Name :</h4>
+                        <h4 for="staticEmail" class="py-0 col-sm-4 col-form-label">Name</h4>
                         <div class="col-sm-8">
                             <label for="staticEmail" class="col-form-label"><span
-                                    class="text-secondary"><?php echo $row['name']; ?> </span></label>
+                                    class="text-secondary">: <?php echo $row['a_name']; ?> </span></label>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <h4 for="staticEmail" class="py-0 col-sm-4 col-form-label">E-mail : </h4>
+                        <h4 for="staticEmail" class="py-0 col-sm-4 col-form-label">E-mail</h4>
                         <div class="col-sm-8">
                             <label for="staticEmail" class="col-form-label"><span
-                                    class="text-secondary"><?php echo $row['email']; ?></span></label>
+                                    class="text-secondary">: <?php echo $row['a_mail']; ?></span></label>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <h4 for="staticEmail" class="py-0 col-sm-4 col-form-label">Phone No :</h4>
+                        <h4 for="staticEmail" class="py-0 col-sm-4 col-form-label">Phone No</h4>
                         <div class="col-sm-8">
                             <label for="staticEmail" class="col-form-label"><span
-                                    class="text-secondary"><?php echo $row['phone']; ?> </span></label>
+                                    class="text-secondary">: <?php echo $row['a_phone']; ?> </span></label>
                         </div>
                     </div>
                     <!-- <div class="form-group row">
@@ -69,13 +69,13 @@ $row = mysqli_fetch_array($result);
                         </div>
                     </div> -->
                     <div class="form-group row">
-                        <h4 for="staticEmail" class="py-0 col-sm-4 col-form-label">Join Date :</h4>
+                        <h4 for="staticEmail" class="py-0 col-sm-4 col-form-label">Join Date</h4>
                         <div class="col-sm-8">
                             <label for="staticEmail" class="col-form-label"><span
-                                    class="text-secondary"><?php echo $row['time']; ?> </span></label>
+                                    class="text-secondary">: <?php echo $row['a_time']; ?> </span></label>
                         </div>
                     </div>
-                    <a href="" class="btn btn-block btn-primary rounded-0 mt-4">Edit Details</a>
+                    <a href="adminDashbord.php?content_id=updateAdminForm&id=<?php echo $row['a_id']; ?>" class="btn btn-block btn-primary rounded-0 mt-4">Edit Details</a>
                 </div>
             </div>
         </div>

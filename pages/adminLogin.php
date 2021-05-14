@@ -9,7 +9,7 @@
                 </button>
             </div>
             <!-- Register with mail -->
-            <form action="userDashbord/userLogin.php" method="post" id="uLogin" autocomplete="off">
+            <form action="adminDashbord/adminLogin.php" method="post" id="uLogin" autocomplete="off">
                 <div class="modal-body">
                     <div class="input-group input-group-lg form-group">
                         <div class="input-group-prepend">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="input-group input-group-lg form-group">
                         <button type="submit" class="btn btn-success btn-block btn-lg rounded-0 px-5"
-                            value="u_login" name="u_login">Log in</button>
+                            value="a_login" name="a_login">Log in</button>
                     </div>
                 </div>
             </form>

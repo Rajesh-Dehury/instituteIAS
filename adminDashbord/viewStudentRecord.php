@@ -57,7 +57,7 @@
         </div>
         <div class="form-group row">
             <div class="col-sm-2">
-                <a href="" class="btn btn-success btn-block rounded-0 ">Go Back</a>
+                <a href="content_id=viewAllStudents" class="btn btn-success btn-block rounded-0 ">Go Back</a>
             </div>
             <div class="col-sm-2">
                 <a href="" class="btn btn-success btn-block rounded-0 ">Modify</a>
