@@ -14,7 +14,7 @@
             </li> -->
             <li><a href=""><i class="fa fa-info-circle" aria-hidden="true"></i>About Us</a></li>
             <li><a href=""><i class="fa fa-phone" aria-hidden="true"></i>Contact Us</a></li>
-            <li class="c-nav-item"><a href="" data-toggle="modal" data-target="#AdminLoginModal"><i class="fa fa-sign-in" aria-hidden="true"></i>Admin Log in</a></li>
+            <li class="c-nav-item"><a href="" data-toggle="modal" data-target="#AdminLoginModal"> <i class="fa fa-sign-in" aria-hidden="true"></i>Admin Log in</a></li>
         </ul>
     </nav>
 </div>
