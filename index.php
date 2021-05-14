@@ -41,10 +41,10 @@
 
 
 
-<?php include 'pages/AdminLogin.php'; ?>
+<?php include 'pages/adminLogin.php'; ?>
 
-<?php include// 'pages/studentRegister.php'; ?>
-<?php include// 'pages/studentLogin.php'; ?>
+<?php include 'pages/studentRegister.php'; ?>
+<?php include 'pages/studentLogin.php'; ?>
 
 
 <div class="chat-bot">
